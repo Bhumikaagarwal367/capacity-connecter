@@ -1,0 +1,21 @@
+{
+  "name": "Connect Capacity - Unified Training Portal",
+  "short_name": "Connect Capacity",
+  "description": "Smart role-based training platform with matchmaker, quizzes, digital library, and admin control.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

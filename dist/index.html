@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexTrain - Role-Based Portal | Matchmaker, Quizzes, Library & PWA</title>
+  <meta name="description" content="All-in-one role-based training platform featuring AI trainer matchmaker, timed interactive quizzes with instant grading, cloud digital library with offline reading, and admin control." />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
+  <script type="module" crossorigin src="/assets/index-Di5SffpP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CUGHy1Cv.css">
+</head>
+<body>
+  <!-- Offline Network Status Indicator Banner -->
+  <div id="offline-status-banner" class="offline-banner-alert" style="display: none;">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="1" y1="1" x2="23" y2="23"/>
+      <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/>
+      <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/>
+      <path d="M10.71 5.05A16 16 0 0 1 22.58 9"/>
+      <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/>
+      <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+      <line x1="12" y1="20" x2="12.01" y2="20"/>
+    </svg>
+    <span>Offline Mode Active: Accessing saved study guides & offline lecture notes from device cache.</span>
+  </div>
+
+  <!-- Announcement & News Marquee Banner -->
+  <div id="top-announcement-banner" class="top-announcement-strip">
+    <!-- Populated by App JS with Admin News -->
+  </div>
+
+  <!-- Main Portal Header -->
+  <header class="main-header" id="portal-header">
+    <div class="header-container">
+      <!-- Brand & Logo -->
+      <div class="header-brand">
+        <div class="brand-icon-wrap">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+          </svg>
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-title">NexTrain</span>
+          <span class="brand-badge">PWA 2.0</span>
+        </div>
+      </div>
+
+      <!-- Quick Role Switcher Bar -->
+      <nav class="role-switcher-container" aria-label="Portal Role Switcher">
+        <span class="role-switcher-label">View As:</span>
+        <button class="role-switcher-btn active-role" data-role="trainee" id="role-btn-trainee" title="Switch to Trainee Dashboard">
+          <span>🎓</span>
+          <span>Trainee</span>
+        </button>
+        <button class="role-switcher-btn" data-role="trainer" id="role-btn-trainer" title="Switch to Trainer Dashboard">
+          <span>👨‍🏫</span>
+          <span>Trainer</span>
+        </button>
+        <button class="role-switcher-btn" data-role="admin" id="role-btn-admin" title="Switch to Admin Command Center">
+          <span>⚙️</span>
+          <span>Admin</span>
+        </button>
+      </nav>
+
+      <!-- Right Utility Actions -->
+      <div class="header-right-controls">
+        <!-- Low Data Mode Toggle -->
+        <button id="btn-toggle-data-saver" class="btn-utility" title="Toggle Data Saver (Low Bandwidth Mode)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span id="data-saver-status-text">Data Saver: OFF</span>
+        </button>
+
+        <!-- PWA Install Prompt Button -->
+        <button id="btn-install-pwa" class="btn-utility btn-install-app" style="display: none;" title="Install NexTrain to Desktop or Mobile Device">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <span>📲 Install App</span>
+        </button>
+
+        <!-- Current User Profile Avatar & Role -->
+        <div class="user-profile-badge" id="current-user-badge">
+          <img src="" alt="User Avatar" class="user-avatar-header" id="header-user-avatar" />
+          <div class="user-profile-info">
+            <span class="user-profile-name" id="header-user-name">Alex Chen</span>
+            <span class="user-profile-title" id="header-user-title">Senior Associate Engineer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Navigation Tabs (Contextual by Role) -->
+  <nav class="secondary-nav-container" id="secondary-nav-bar" aria-label="Module Tabs">
+    <div class="secondary-nav-inner" id="role-nav-tabs">
+      <!-- Populated dynamically based on role -->
+    </div>
+  </nav>
+
+  <!-- Main Content Layout View -->
+  <main class="app-content-wrapper" id="main-content-view">
+    <!-- Rendered dynamically by app.js -->
+  </main>
+
+  <!-- Universal Modal Backdrop & Container -->
+  <div id="modal-backdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-window">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal Title</h3>
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Application Bootstrap -->
+</body>
+</html>
